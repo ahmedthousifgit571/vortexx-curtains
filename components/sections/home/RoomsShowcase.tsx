@@ -97,7 +97,7 @@ export function RoomsShowcase() {
             >
               {shortName(product.name)}
             </span>
-            <LogoMark className="size-[0.38em]" />
+            <LogoMark className="size-[0.38em] text-teal-700" />
           </span>
         ))}
       />

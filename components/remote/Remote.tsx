@@ -45,7 +45,7 @@ function DesktopRemote() {
           aria-label="Home"
           className="mx-auto my-3 grid size-12 place-items-center rounded-full bg-teal-700 shadow-inner ring-1 ring-white/15 transition-transform outline-none hover:scale-105 focus-visible:ring-2 focus-visible:ring-sunlight active:scale-95"
         >
-          <LogoMark className="size-6" />
+          <LogoMark className="size-6 text-white" />
         </Link>
         <ul className="flex flex-col gap-1.5">
           {remoteButtons.map((b) => {

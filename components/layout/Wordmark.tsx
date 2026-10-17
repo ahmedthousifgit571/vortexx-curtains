@@ -1,17 +1,23 @@
 import { cn } from "@/lib/utils"
+import {
+  logoViewBox,
+  markPath,
+  markViewBox,
+  taglinePath,
+  wordPath,
+  wordViewBox,
+} from "./logo-paths"
 
-/** Slatted square mark — the stripe motif from the business card. */
+/** The slatted blind from the Lourtex logo. Takes its colour from `currentColor`. */
 export function LogoMark({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden className={cn("size-8", className)}>
-      <rect width="32" height="32" rx="7" fill="#154A5E" />
-      {[7, 12, 17, 22].map((x) => (
-        <rect key={x} x={x} y="7" width="3" height="18" rx="1" fill="#FFFFFF" />
-      ))}
+    <svg viewBox={markViewBox} aria-hidden fill="currentColor" className={cn("size-8", className)}>
+      <path d={markPath} />
     </svg>
   )
 }
 
+/** Horizontal lockup for tight spots (header, menu): the mark beside "Lourtex". */
 export function Wordmark({
   className,
   withMark = true,
@@ -20,11 +26,27 @@ export function Wordmark({
   withMark?: boolean
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      {withMark && <LogoMark />}
-      <span className="font-display text-xl leading-none tracking-[0.12em] uppercase sm:text-2xl">
-        Lourtex
-      </span>
+    <span className={cn("inline-flex items-center gap-2.5 sm:gap-3", className)}>
+      {withMark && <LogoMark className="size-8 sm:size-9" />}
+      <svg viewBox={wordViewBox} aria-hidden fill="currentColor" className="h-5 w-auto sm:h-6">
+        <path fillRule="evenodd" d={wordPath} />
+      </svg>
     </span>
+  )
+}
+
+/** The full stacked logo as supplied: mark, "Lourtex", then the tagline. */
+export function Logo({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox={logoViewBox}
+      aria-hidden
+      fill="currentColor"
+      className={cn("h-auto w-36", className)}
+    >
+      <path d={markPath} />
+      <path fillRule="evenodd" d={wordPath} />
+      <path fillRule="evenodd" d={taglinePath} />
+    </svg>
   )
 }

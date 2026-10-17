@@ -4,7 +4,7 @@ import { footerNav } from "@/lib/nav"
 import { products } from "@/lib/products"
 import { fullAddress, mapsLink, site, whatsappLink } from "@/lib/site"
 import { FooterWordmark } from "./FooterWordmark"
-import { Wordmark } from "./Wordmark"
+import { Logo } from "./Wordmark"
 
 const linkClass = "text-white/60 transition-colors hover:text-white"
 
@@ -27,7 +27,7 @@ export function Footer() {
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-5">
               <Link href="/" aria-label="Lourtex home" className="inline-block">
-                <Wordmark />
+                <Logo className="w-32 sm:w-36" />
               </Link>
               <p className="mt-6 max-w-sm leading-relaxed text-white/60">
                 Made-to-measure blinds, motorised shutters and pergolas for homes and businesses.

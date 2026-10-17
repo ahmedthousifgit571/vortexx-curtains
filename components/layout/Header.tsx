@@ -19,7 +19,7 @@ export function Header() {
           href="/"
           data-hide-during-intro
           aria-label="Lourtex home"
-          className="pointer-events-auto text-teal-800 transition-opacity duration-500"
+          className="pointer-events-auto text-teal-700 transition-opacity duration-500"
         >
           <Wordmark />
         </Link>
