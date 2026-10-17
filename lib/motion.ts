@@ -93,8 +93,8 @@ export const roomsBento = {
 export const marquee = {
   photoLoop: 70,
   wordLoop: 55,
-  /** Associate partners ribbon (one copy holds two name pairs). */
-  partnerLoop: 60,
+  /** Associate partners ribbon. One copy holds two name pairs, so each name returns every ~8s. */
+  partnerLoop: 16,
   /** Reviews: seconds per card, so the drift keeps one reading pace as reviews are added. */
   reviewPerCard: 10,
   /** Scroll velocity (px/s) that adds +1× speed. */

@@ -48,6 +48,13 @@ export function Footer() {
                   className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </a>
+
+              <div className="mt-10 max-w-sm border-t border-white/10 pt-6">
+                <h2 className="eyebrow text-white/45">Associate partners</h2>
+                <p className="mt-3 font-display text-3xl leading-tight sm:text-4xl">
+                  Curttex <em className="text-teal-200">Global Trading</em>
+                </p>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:col-span-7">
