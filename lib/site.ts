@@ -8,11 +8,11 @@ export const site = {
   /** Static so pages stay prerenderable (no request-time Date). */
   copyrightYear: 2026,
   contacts: [
-    { name: "Juffal K.M", phone: "+91 95675 74451", tel: "+919567574451" },
-    { name: "Sabir K.S", phone: "+91 98476 50005", tel: "+919847650005" },
+    { name: "Nainas", phone: "+91 94464 20264", tel: "+919446420264" },
+    { name: "Sabir", phone: "+91 94462 06391", tel: "+919446206391" },
   ],
-  /** Primary WhatsApp line (digits only, country code first). */
-  whatsapp: "919567574451",
+  /** Primary WhatsApp line, Nainas (digits only, country code first). */
+  whatsapp: "919446420264",
   address: {
     street: "No. 192, 3rd Cross, BPMP, K. Channasandra Village, Horamavu Post",
     locality: "Krishnarajapuram Hobli, Bangalore East Taluk",

@@ -57,6 +57,8 @@ products.
 ## Contact details (use in footer, contact page, and JSON-LD)
 - Juffal K.M — +91 95675 74451
 - Sabir K.S — +91 98476 50005
+  → OVERRIDDEN by client (2026-10-17): contacts are **Nainas +91 94464 20264** and
+    **Sabir +91 94462 06391** (lib/site.ts). WhatsApp goes to Nainas.
 - Email: curttex2026@gmail.com
 - Address: No. 192, 3rd Cross, BPMP, K. Channasandra Village, Horamavu Post,
   Krishnarajapuram Hobli, Bangalore East Taluk, Bangalore, Karnataka 560113, India

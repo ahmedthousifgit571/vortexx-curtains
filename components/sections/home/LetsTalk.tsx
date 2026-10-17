@@ -4,7 +4,7 @@ import { site, whatsappLink } from "@/lib/site"
 import { ShowcaseVideo } from "./ShowcaseVideo"
 
 const [primary] = site.contacts
-/** "Juffal K.M" → "JK" */
+/** "Sabir K.S" → "SK", "Nainas" → "N" */
 const initials = (name: string) =>
   name
     .split(/[\s.]+/)
@@ -34,7 +34,7 @@ export function LetsTalk() {
                 Let&apos;s <em className="text-teal-600">talk</em>
               </h2>
               <p data-reveal className="mt-5 max-w-sm leading-relaxed text-ink/65">
-                Send us a photo of your windows and tell us how much light you want. Juffal or Sabir
+                Send us a photo of your windows and tell us how much light you want. Nainas or Sabir
                 will reply on WhatsApp and set up a free visit to measure.
               </p>
 

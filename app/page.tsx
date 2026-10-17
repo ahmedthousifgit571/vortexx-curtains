@@ -2,6 +2,7 @@ import { StripeDivider } from "@/components/layout/StripeDivider"
 import { Intro } from "@/components/scenes/Intro"
 import { Hero } from "@/components/sections/home/Hero"
 import { LetsTalk } from "@/components/sections/home/LetsTalk"
+import { Partners } from "@/components/sections/home/Partners"
 import { RoomsShowcase } from "@/components/sections/home/RoomsShowcase"
 import { Testimonials } from "@/components/sections/home/Testimonials"
 import {
@@ -26,6 +27,7 @@ export default function HomePage() {
       <Testimonials />
       <CurtainCall />
       <LetsTalk />
+      <Partners />
     </>
   )
 }

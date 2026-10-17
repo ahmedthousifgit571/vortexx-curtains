@@ -291,7 +291,6 @@ export function Intro() {
           <p className="font-display text-[clamp(3.75rem,17vw,13rem)] leading-[0.85] tracking-[0.04em] uppercase [text-shadow:0_6px_40px_rgb(0_0_0/0.5)]">
             Lourtex
           </p>
-          <p className="mt-8 eyebrow text-white/60">Curtains · Blinds · Shutters</p>
         </div>
       </div>
 
