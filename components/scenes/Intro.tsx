@@ -74,15 +74,21 @@ export function Intro() {
   }, [lenis, active])
 
   // Navigating away mid-intro (e.g. "Get a Quote") must never leave the page locked.
-  // Checked on the next tick so StrictMode's dev-only remount doesn't end the intro.
+  // With cacheComponents the home route isn't unmounted but hidden in an <Activity>
+  // (its DOM stays connected), so this runs on effect cleanup rather than DOM removal.
+  // Deferred a tick so a re-run in the same commit (StrictMode's dev-only remount,
+  // Lenis becoming ready) cancels it instead of ending the intro.
+  const leaving = useRef<ReturnType<typeof setTimeout>>(undefined)
   useEffect(() => {
-    const el = root.current
+    clearTimeout(leaving.current)
     return () => {
-      setTimeout(() => {
-        if (!el?.isConnected) finishIntro()
+      leaving.current = setTimeout(() => {
+        if (!isActive()) return
+        finishIntro()
+        lenis?.start()
       }, 0)
     }
-  }, [])
+  }, [lenis])
 
   useGSAP(
     () => {
