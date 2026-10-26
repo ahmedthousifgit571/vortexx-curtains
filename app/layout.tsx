@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Archivo, Instrument_Serif, Manrope, Monsieur_La_Doulaise } from "next/font/google"
+import { Archivo, Manrope, Monsieur_La_Doulaise, Outfit } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 import { Footer } from "@/components/layout/Footer"
 import { Header } from "@/components/layout/Header"
@@ -10,12 +10,10 @@ import { introScript } from "@/lib/intro-script"
 import { site } from "@/lib/site"
 import "./globals.css"
 
-// Display: condensed high-contrast serif. Single weight — bold is never synthesised (see globals.css).
-const instrumentSerif = Instrument_Serif({
+// Display: geometric sans, variable 100–900. Major headings use it at Black (see globals.css).
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument-serif",
+  variable: "--font-outfit",
   display: "swap",
 })
 // Labels: Archivo with the width axis, used at its widest (125%).
@@ -59,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en-IN"
-      className={`${instrumentSerif.variable} ${archivo.variable} ${script.variable} ${manrope.variable}`}
+      className={`${outfit.variable} ${archivo.variable} ${script.variable} ${manrope.variable}`}
       suppressHydrationWarning
     >
       <head>

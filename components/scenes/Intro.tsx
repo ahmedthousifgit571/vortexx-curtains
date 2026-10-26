@@ -294,7 +294,7 @@ export function Intro() {
         className="pointer-events-none absolute inset-0 grid place-items-center"
       >
         <div className="px-6 text-center text-white">
-          <p className="font-display text-[clamp(3.75rem,17vw,13rem)] leading-[0.85] tracking-[0.04em] uppercase [text-shadow:0_6px_40px_rgb(0_0_0/0.5)]">
+          <p className="font-display text-[clamp(3rem,14vw,11rem)] leading-[0.85] font-black tracking-[-0.02em] uppercase [text-shadow:0_6px_40px_rgb(0_0_0/0.5)]">
             Lourtex
           </p>
         </div>

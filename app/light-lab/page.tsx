@@ -33,7 +33,9 @@ export default function LightLabPage() {
                   background: `linear-gradient(180deg, rgb(242 200 121 / ${[0.05, 0.4, 0.75, 0.5][i]}), rgb(21 74 94 / ${[0.9, 0.35, 0.08, 0.3][i]}))`,
                 }}
               />
-              <h2 className="mt-6 text-xl font-semibold text-teal-900">{title}</h2>
+              <h2 className="mt-6 text-xl leading-snug font-semibold text-teal-900 normal-case">
+                {title}
+              </h2>
               <p className="mt-2 text-sm leading-relaxed text-ink/60">{body}</p>
             </li>
           ))}

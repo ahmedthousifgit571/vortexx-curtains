@@ -31,7 +31,7 @@ export default function ProductsPage() {
             >
               <div className="grid gap-10 lg:grid-cols-12">
                 <div className="lg:col-span-3">
-                  <h2 id={`${cat.id}-heading`} className="text-3xl font-bold text-teal-900">
+                  <h2 id={`${cat.id}-heading`} className="text-3xl text-teal-900">
                     {cat.label}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-ink/60">{cat.blurb}</p>

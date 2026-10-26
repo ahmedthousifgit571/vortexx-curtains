@@ -22,7 +22,7 @@ const texture: Record<Mechanic, string> = {
 }
 
 /**
- * Arched photo of the product with shade swatches. On first paint the photo is
+ * Photo of the product in a rectangular window frame, with shade swatches. On first paint the photo is
  * uncovered by teal bands lifting away — a zebra blind opening. Shades without
  * a photo yet show a tinted placeholder in their place.
  */
@@ -42,8 +42,8 @@ export function ProductShowcase({
       <div className="relative">
         {/* Warm light spilling round the frame */}
         <div aria-hidden className="absolute -inset-8 rounded-full bg-sunlight/30 blur-3xl" />
-        <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-2xl bg-teal-900 p-2.5 shadow-[0_40px_80px_-30px_rgb(11_40_51/0.6)]">
-          <div className="relative size-full overflow-hidden rounded-t-[999px] rounded-b-xl bg-ivory-200">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-teal-900 p-2.5 shadow-[0_40px_80px_-30px_rgb(11_40_51/0.6)]">
+          <div className="relative size-full overflow-hidden rounded-sm bg-ivory-200">
             {images.map((img, i) => {
               const shown = cn(
                 "transition-[opacity,transform] duration-1000 ease-[var(--ease-out-soft)]",
@@ -77,8 +77,17 @@ export function ProductShowcase({
                 />
               ))}
             </div>
+
+            {/* The frame's shadow falling onto the glass */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 shadow-[inset_0_0_28px_4px_rgb(11_40_51/0.28)]"
+            />
           </div>
         </div>
+
+        {/* Sill */}
+        <div aria-hidden className="relative mx-[-4%] -mt-1 h-3 rounded-sm bg-teal-950" />
       </div>
 
       {/* Shade picker */}

@@ -36,7 +36,7 @@ export function FooterWordmark() {
       <p
         ref={root}
         aria-hidden
-        className="bg-clip-text text-center font-display text-[27cqw] leading-[0.8] tracking-[0.02em] whitespace-nowrap text-transparent uppercase select-none [--open:1] [--period:0.07em]"
+        className="bg-clip-text text-center font-display text-[21cqw] leading-[0.8] font-black tracking-[-0.02em] whitespace-nowrap text-transparent uppercase select-none [--open:1] [--period:0.07em]"
         style={{
           backgroundImage:
             "repeating-linear-gradient(90deg, var(--color-ivory) 0 calc(var(--period) * var(--open)), transparent 0 var(--period))",

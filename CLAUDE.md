@@ -49,9 +49,12 @@ products.
   via next/font/local, or "Manrope"/"Outfit" via next/font/google as fallback), and a
   clean sans for body. All-caps tracking for labels.
   → OVERRIDDEN by client (2026-10-15): editorial look modelled on era-residence.com, using
-    free Google fonts — display Instrument Serif (single weight; `font-synthesis-weight: none`),
-    labels Archivo at `font-stretch: 125%` (`eyebrow` / `font-label font-stretch-expanded`),
+    free Google fonts — labels Archivo at `font-stretch: 125%` (`eyebrow` / `font-label font-stretch-expanded`),
     script accent Monsieur La Doulaise (`font-script`, decorative only), body Manrope.
+  → OVERRIDDEN by client (2026-10-26): display font is **Outfit** (variable, `font-display`),
+    matching their FaizuraTrading site. h1/h2 are Outfit Black, uppercase, tracking -0.035em,
+    leading 0.92 (base layer in globals.css). Accent words are `<em>` in teal, upright (Outfit
+    has no italic).
 - Tone: premium, warm, confident, local. Not cluttered.
 
 ## Contact details (use in footer, contact page, and JSON-LD)

@@ -18,7 +18,7 @@ export function ProductsTeaser() {
         <Reveal className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div data-reveal>
             <p className="eyebrow text-teal-600">What we make</p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-bold text-teal-900 sm:text-5xl">
+            <h2 className="mt-4 max-w-2xl text-4xl text-teal-900 sm:text-5xl">
               Every window and terrace, shaded your way.
             </h2>
           </div>
@@ -101,7 +101,7 @@ export function ServicesPreview() {
           <p data-reveal className="eyebrow text-teal-600">
             How it works
           </p>
-          <h2 data-reveal className="mt-4 max-w-2xl text-4xl font-bold text-teal-900 sm:text-5xl">
+          <h2 data-reveal className="mt-4 max-w-2xl text-4xl text-teal-900 sm:text-5xl">
             From measure to magic.
           </h2>
         </Reveal>
@@ -138,7 +138,10 @@ export function AreasServed() {
   return (
     <section className="bg-ivory py-20">
       <Reveal className="container-site">
-        <h2 data-reveal className="max-w-3xl text-2xl font-semibold text-teal-900 sm:text-3xl">
+        <h2
+          data-reveal
+          className="max-w-3xl text-2xl leading-snug font-semibold text-teal-900 normal-case sm:text-3xl"
+        >
           Blinds, shutters and pergolas for homes across East Bangalore, from our base in Horamavu,
           KR Puram.
         </h2>
@@ -181,7 +184,7 @@ export function CurtainCall() {
         <p data-reveal className="eyebrow text-sunlight">
           Curtain call
         </p>
-        <h2 data-reveal className="mx-auto mt-5 max-w-3xl text-4xl font-bold sm:text-6xl">
+        <h2 data-reveal className="mx-auto mt-5 max-w-3xl text-4xl sm:text-6xl">
           Book a free measure &amp; quote.
         </h2>
         <p data-reveal className="mx-auto mt-6 max-w-xl text-white/70">

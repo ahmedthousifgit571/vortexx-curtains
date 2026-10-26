@@ -32,7 +32,7 @@ export default function ServicesPage() {
                 >
                   {String(i + 1).padStart(2, "0")}
                 </p>
-                <h2 data-reveal className="text-3xl font-bold text-teal-900 md:col-span-3">
+                <h2 data-reveal className="text-3xl text-teal-900 md:col-span-3">
                   {step.title}
                 </h2>
                 <div data-reveal className="md:col-span-7">

@@ -36,7 +36,7 @@ export function PageHeader({
         <p className={cn("eyebrow", dark ? "text-teal-200" : "text-teal-600")}>{eyebrow}</p>
         <h1
           className={cn(
-            "mt-5 max-w-4xl text-[clamp(2.5rem,6vw,4.75rem)] leading-[0.98] font-bold",
+            "mt-5 max-w-4xl text-[clamp(2.5rem,6vw,4.75rem)] leading-[0.98]",
             dark ? "text-white" : "text-teal-900",
           )}
         >

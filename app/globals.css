@@ -24,7 +24,7 @@
   --color-sunlight-soft: #f8e2b4;
   --color-ink: #0e1a1f;
 
-  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
   --font-label: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-script: var(--font-script-face), cursive;
 
@@ -139,7 +139,7 @@
   html {
     @apply font-sans;
     -webkit-text-size-adjust: 100%;
-    /* The display + script faces ship one weight; never fake-bold them. */
+    /* The script face ships one weight; never fake-bold it. */
     font-synthesis-weight: none;
   }
   body {
@@ -154,7 +154,16 @@
   h2,
   h3,
   h4 {
-    @apply font-display tracking-[-0.01em] text-balance;
+    @apply font-display font-bold tracking-[-0.02em] text-balance;
+  }
+  /* Major headings: Outfit Black in caps, set tight. */
+  h1,
+  h2 {
+    @apply leading-[0.92] font-black tracking-[-0.035em] uppercase;
+  }
+  /* Outfit has no italic, so accent words keep their colour and stay upright. */
+  :is(h1, h2, h3, h4, .font-display) em {
+    font-style: normal;
   }
   ::selection {
     background: var(--color-sunlight);

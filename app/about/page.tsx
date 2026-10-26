@@ -22,7 +22,7 @@ export default function AboutPage() {
         <Reveal className="container-site grid gap-12 lg:grid-cols-12">
           <div data-reveal className="lg:col-span-5">
             <p className="eyebrow text-teal-600">Our story</p>
-            <h2 className="mt-4 text-4xl font-bold text-teal-900">Made in East Bangalore.</h2>
+            <h2 className="mt-4 text-4xl text-teal-900">Made in East Bangalore.</h2>
           </div>
           <div data-reveal className="space-y-5 text-lg leading-relaxed text-ink/70 lg:col-span-7">
             {/* Placeholder copy — replace with the founders' own story. */}
@@ -43,7 +43,7 @@ export default function AboutPage() {
       <section className="bg-white py-24">
         <div className="container-site">
           <p className="eyebrow text-teal-600">The team</p>
-          <h2 className="mt-4 text-4xl font-bold text-teal-900">The people you&apos;ll talk to.</h2>
+          <h2 className="mt-4 text-4xl text-teal-900">The people you&apos;ll talk to.</h2>
           <Reveal className="mt-12 grid gap-5 sm:grid-cols-2">
             {site.contacts.map((c) => (
               <div key={c.tel} data-reveal className="rounded-2xl bg-teal-800 p-8 text-white">

@@ -105,7 +105,7 @@ async function ProductContent({ params }: Pick<PageProps<"/products/[slug]">, "p
                   </span>
                 )}
               </p>
-              <h1 className="mt-5 text-[clamp(3.5rem,9vw,7.5rem)] leading-[0.9] text-teal-900">
+              <h1 className="mt-5 text-[clamp(2.75rem,6vw,5rem)] leading-[0.9] text-teal-900">
                 <SplitName name={product.name} />
               </h1>
               <p className="mt-7 max-w-lg font-display text-2xl leading-snug text-teal-800 sm:text-3xl">

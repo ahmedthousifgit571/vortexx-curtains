@@ -26,7 +26,7 @@ export function Hero() {
             <p data-hero-fade className="eyebrow text-teal-600">
               Blinds · Shutters · Pergolas
             </p>
-            <h1 className="mt-5 text-[clamp(4rem,11vw,9rem)] leading-[0.88] text-teal-900">
+            <h1 className="mt-5 text-[clamp(4rem,8vw,7rem)] leading-[0.88] text-teal-900">
               Let the <em className="text-teal-600">light</em> in.
             </h1>
             <p

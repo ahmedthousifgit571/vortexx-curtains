@@ -61,7 +61,7 @@ export function Footer() {
               <nav aria-labelledby="footer-products">
                 <h2
                   id="footer-products"
-                  className="font-sans text-base font-semibold tracking-normal"
+                  className="font-sans text-base leading-normal font-semibold tracking-normal normal-case"
                 >
                   Products
                 </h2>
@@ -79,7 +79,7 @@ export function Footer() {
               <nav aria-labelledby="footer-explore">
                 <h2
                   id="footer-explore"
-                  className="font-sans text-base font-semibold tracking-normal"
+                  className="font-sans text-base leading-normal font-semibold tracking-normal normal-case"
                 >
                   Explore
                 </h2>
@@ -95,7 +95,9 @@ export function Footer() {
               </nav>
 
               <div className="col-span-2 sm:col-span-1">
-                <h2 className="font-sans text-base font-semibold tracking-normal">Contact</h2>
+                <h2 className="font-sans text-base leading-normal font-semibold tracking-normal normal-case">
+                  Contact
+                </h2>
                 <ul className="mt-5 space-y-3">
                   {site.contacts.map((c) => (
                     <li key={c.tel}>
