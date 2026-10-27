@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState, type CSSProperties } from "react"
 import { useLenis } from "lenis/react"
-import { ArrowRight, MessageCircle, Phone, X } from "lucide-react"
+import { ArrowRight, Download, MessageCircle, Phone, X } from "lucide-react"
 import { Dialog } from "radix-ui"
 import { Button } from "@/components/ui/button"
 import { mobileNav } from "@/lib/nav"
@@ -152,6 +152,14 @@ export function MobileMenu() {
                 </a>
               </Button>
             </div>
+            <a
+              href="/BLINDS.pdf"
+              download="Lourtex-Brochure.pdf"
+              className="flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-sunlight/40 hover:bg-white/10 hover:text-sunlight"
+            >
+              <Download className="size-4" aria-hidden />
+              Download Brochure
+            </a>
             <ul className="grid grid-cols-2 gap-3 text-sm">
               {site.contacts.map((c) => (
                 <li key={c.tel}>
