@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone } from "lucide-react"
+import { Download, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { site } from "@/lib/site"
 import { HeaderNav } from "./HeaderNav"
@@ -25,6 +25,16 @@ export function Header() {
         </Link>
         <div className="pointer-events-auto flex items-center gap-2 sm:gap-4 lg:gap-8">
           <HeaderNav />
+          <a
+            href="/BLINDS.pdf"
+            download="Lourtex-Brochure.pdf"
+            data-hide-during-intro
+            className="hidden items-center gap-2 text-sm font-semibold text-teal-800 transition-all duration-500 hover:text-teal-600 hover:scale-105 lg:inline-flex"
+            title="Download our product brochure"
+          >
+            <Download className="size-4" aria-hidden />
+            Brochure
+          </a>
           <a
             href={`tel:${primary.tel}`}
             data-hide-during-intro
