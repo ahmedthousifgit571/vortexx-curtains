@@ -5,6 +5,35 @@ import { z } from "zod"
 import { quoteSchema, type QuoteInput, type QuoteResult } from "@/lib/quote-schema"
 import { site } from "@/lib/site"
 
+/** Send form data to Google Sheets via Apps Script web app. */
+async function appendToGoogleSheet(quote: z.output<typeof quoteSchema>) {
+  const url = process.env.GOOGLE_SHEET_WEBHOOK_URL
+  if (!url) {
+    console.warn("[quote] GOOGLE_SHEET_WEBHOOK_URL not set — skipping sheet append")
+    return
+  }
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: quote.name,
+        phone: quote.phone,
+        email: quote.email,
+        area: quote.area,
+        interests: quote.interests,
+        windows: quote.windows,
+        contactPreference: quote.contactPreference,
+        message: quote.message,
+      }),
+    })
+    if (!res.ok) console.error("[quote] Google Sheet error:", res.status, await res.text())
+  } catch (err) {
+    // Don't fail the whole submission just because the sheet is unreachable
+    console.error("[quote] Google Sheet fetch failed:", err)
+  }
+}
+
 export async function submitQuote(input: QuoteInput): Promise<QuoteResult> {
   const parsed = quoteSchema.safeParse(input)
   if (!parsed.success) {
@@ -18,6 +47,9 @@ export async function submitQuote(input: QuoteInput): Promise<QuoteResult> {
 
   // Bots fill the hidden field; pretend it worked so they don't retry.
   if (quote.company) return { ok: true }
+
+  // Append lead to Google Sheet (fire-and-forget — don't block submission)
+  appendToGoogleSheet(quote).catch(() => {})
 
   const subject = `Quote request: ${quote.name} (${quote.interests.join(", ")})`
   const text = [
