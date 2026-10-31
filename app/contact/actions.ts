@@ -34,22 +34,13 @@ async function appendToGoogleSheet(quote: z.output<typeof quoteSchema>) {
   }
 }
 
-export async function submitQuote(input: QuoteInput): Promise<QuoteResult> {
-  const parsed = quoteSchema.safeParse(input)
-  if (!parsed.success) {
-    return {
-      ok: false,
-      error: "Please check the highlighted fields.",
-      fieldErrors: z.flattenError(parsed.error).fieldErrors,
-    }
+/** Best-effort email notification via Resend. Failures are logged but don't block the form. */
+async function sendEmailNotification(quote: z.output<typeof quoteSchema>) {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.info("[quote] RESEND_API_KEY not set — skipping email notification")
+    return
   }
-  const quote = parsed.data
-
-  // Bots fill the hidden field; pretend it worked so they don't retry.
-  if (quote.company) return { ok: true }
-
-  // Append lead to Google Sheet (fire-and-forget — don't block submission)
-  appendToGoogleSheet(quote).catch(() => {})
 
   const subject = `Quote request: ${quote.name} (${quote.interests.join(", ")})`
   const text = [
@@ -64,36 +55,40 @@ export async function submitQuote(input: QuoteInput): Promise<QuoteResult> {
     quote.message || "(no message)",
   ].join("\n")
 
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    if (process.env.NODE_ENV !== "production") {
-      console.info(
-        `[quote] RESEND_API_KEY not set, would email ${site.email}:\n${subject}\n${text}`,
-      )
-      return { ok: true }
-    }
-    console.error("[quote] RESEND_API_KEY is not configured")
+  try {
+    const resend = new Resend(apiKey)
+    const { error } = await resend.emails.send({
+      from: process.env.QUOTE_FROM_EMAIL ?? "Lourtex Website <onboarding@resend.dev>",
+      to: process.env.QUOTE_TO_EMAIL ?? site.email,
+      replyTo: quote.email || undefined,
+      subject,
+      text,
+    })
+    if (error) console.error("[quote] Resend error", error)
+  } catch (err) {
+    console.error("[quote] Resend fetch failed:", err)
+  }
+}
+
+export async function submitQuote(input: QuoteInput): Promise<QuoteResult> {
+  const parsed = quoteSchema.safeParse(input)
+  if (!parsed.success) {
     return {
       ok: false,
-      error: "We couldn't send your request just now. Please WhatsApp or call us instead.",
+      error: "Please check the highlighted fields.",
+      fieldErrors: z.flattenError(parsed.error).fieldErrors,
     }
   }
+  const quote = parsed.data
 
-  const resend = new Resend(apiKey)
-  const { error } = await resend.emails.send({
-    from: process.env.QUOTE_FROM_EMAIL ?? "Lourtex Website <onboarding@resend.dev>",
-    to: process.env.QUOTE_TO_EMAIL ?? site.email,
-    replyTo: quote.email || undefined,
-    subject,
-    text,
-  })
+  // Bots fill the hidden field; pretend it worked so they don't retry.
+  if (quote.company) return { ok: true }
 
-  if (error) {
-    console.error("[quote] Resend error", error)
-    return {
-      ok: false,
-      error: "We couldn't send your request just now. Please WhatsApp or call us instead.",
-    }
-  }
+  // Append lead to Google Sheet (fire-and-forget)
+  appendToGoogleSheet(quote).catch(() => {})
+
+  // Send email notification (fire-and-forget — best effort)
+  sendEmailNotification(quote).catch(() => {})
+
   return { ok: true }
 }
