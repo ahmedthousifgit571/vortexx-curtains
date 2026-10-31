@@ -17,7 +17,9 @@ The brief below comes from `curttex-master-prompts.md` (Part 1). Media/video pro
   descriptions, aria-labels, toasts, emails. Use a comma, colon, full stop or `|` (in `<title>`s)
   instead. En dashes in number ranges (e.g. "1–2") are fine. Code comments are exempt.
 - Hero/landing copy stays generic ("homes and businesses"), not pitched only at Bangalore homes.
-  Local keywords belong in the local-reach section, metadata and JSON-LD.
+  Local keywords belong in metadata and JSON-LD.
+  → OVERRIDDEN by client (2026-10-31): the home local-reach section names only Bangalore and
+    Kochi (`site.workshops`), no neighbourhoods.
 
 Dependencies added beyond the brief (all required by listed tools): `@hookform/resolvers` (zod ↔ react-hook-form), shadcn runtime deps (`radix-ui`, `cn`, `class-variance-authority`, `lucide-react`, `sonner`, `tw-animate-css`, `next-themes`), `prettier-plugin-tailwindcss`.
 
@@ -119,8 +121,9 @@ products.
    → OVERRIDDEN by client (2026-10-16): the remote is desktop only (xl+). Below lg the header
      has a menu button opening a full-screen menu (components/layout/MobileMenu.tsx), plus a
      floating WhatsApp button. The header also carries Products / About / Contact links (lg+).
-     Phone numbers live in the footer, the contact page and the home "Curtain call" section,
-     not in the hero.
+     Phone numbers stay out of the hero.
+   → OVERRIDDEN by client (2026-10-31): no phone numbers in the footer or the home "Curtain call"
+     and "Let's talk" sections. "Let's talk" highlights Bangalore and Kochi instead.
 3. WALL OF WINDOWS. Grid of window frames, each dressed in a product. Hover/tap plays
    that treatment's micro-animation (roller rolls, roman folds, sheer sways). Click =
    GSAP Flip / camera zoom through the window into /products/[slug].

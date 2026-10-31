@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, MessageCircle, Phone } from "lucide-react"
+import { ArrowRight, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/sections/Reveal"
 import { WindowFrame } from "@/components/sections/WindowFrame"
@@ -143,16 +143,15 @@ export function AreasServed() {
           data-reveal
           className="max-w-3xl text-2xl leading-snug font-semibold text-teal-900 normal-case sm:text-3xl"
         >
-          Blinds, shutters and pergolas for homes across East Bangalore, from our base in Horamavu,
-          KR Puram.
+          Blinds, shutters and pergolas for homes and businesses, made in our own workshops.
         </h2>
         <ul data-reveal className="mt-8 flex flex-wrap gap-2">
-          {site.areasServed.map((area) => (
+          {site.workshops.map((city) => (
             <li
-              key={area}
+              key={city}
               className="rounded-full border border-teal-700/20 px-4 py-1.5 text-sm text-teal-800"
             >
-              {area}
+              {city}
             </li>
           ))}
         </ul>
@@ -207,25 +206,6 @@ export function CurtainCall() {
             </a>
           </Button>
         </div>
-        <ul
-          data-reveal
-          className="mx-auto mt-10 grid max-w-sm gap-3 border-t border-white/10 pt-8 sm:max-w-xl sm:grid-cols-2"
-        >
-          {site.contacts.map((c) => (
-            <li key={c.tel}>
-              <a
-                href={`tel:${c.tel}`}
-                className="group flex items-center justify-center gap-3 rounded-full px-4 py-2 transition-colors hover:bg-white/5"
-              >
-                <Phone className="size-4 text-sunlight" aria-hidden />
-                <span className="text-sm text-white/55">{c.name}</span>
-                <span className="font-semibold text-white group-hover:text-sunlight">
-                  {c.phone}
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
       </Reveal>
     </section>
   )

@@ -15,18 +15,6 @@ export const site = {
   whatsapp: "919446420264",
   /** Cities only: the client keeps the street address off the site. */
   workshops: ["Bangalore", "Kochi"],
-  areasServed: [
-    "KR Puram",
-    "Horamavu",
-    "Kalyan Nagar",
-    "HRBR Layout",
-    "Ramamurthy Nagar",
-    "Banaswadi",
-    "Hennur",
-    "Whitefield",
-    "Indiranagar",
-    "Hebbal",
-  ],
 } as const
 
 /** "Bangalore and Kochi" */

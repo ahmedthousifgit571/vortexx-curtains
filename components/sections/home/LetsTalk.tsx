@@ -1,9 +1,8 @@
-import { MessageCircle } from "lucide-react"
+import { MapPin, MessageCircle } from "lucide-react"
 import { Reveal } from "@/components/sections/Reveal"
 import { site, whatsappLink, workshopCities } from "@/lib/site"
 import { ShowcaseVideo } from "./ShowcaseVideo"
 
-const [primary] = site.contacts
 /** "Sabir K.S" → "SK", "Nainas" → "N" */
 const initials = (name: string) =>
   name
@@ -70,15 +69,12 @@ export function LetsTalk() {
                 * Free measure and quote, anywhere in Bangalore
               </p>
 
-              <p data-reveal className="mt-10 text-sm text-ink/60">
-                Prefer to call?{" "}
-                <a
-                  href={`tel:${primary.tel}`}
-                  className="font-semibold text-teal-900 transition-colors hover:text-teal-600"
-                >
-                  {primary.phone}
-                </a>{" "}
-                · {workshopCities}
+              <p
+                data-reveal
+                className="mt-10 flex items-center gap-2.5 font-display text-2xl font-semibold text-teal-900"
+              >
+                <MapPin className="size-5 shrink-0 text-teal-600" aria-hidden />
+                {workshopCities}
               </p>
             </Reveal>
 

@@ -84,16 +84,6 @@ export function Footer() {
                   Contact
                 </h2>
                 <ul className="mt-5 space-y-3">
-                  {site.contacts.map((c) => (
-                    <li key={c.tel}>
-                      <a href={`tel:${c.tel}`} className="group block">
-                        <span className="block text-white/60 transition-colors group-hover:text-white">
-                          {c.phone}
-                        </span>
-                        <span className="text-xs text-white/45">{c.name}</span>
-                      </a>
-                    </li>
-                  ))}
                   <li>
                     <a href={`mailto:${site.email}`} className={`${linkClass} break-all`}>
                       {site.email}
