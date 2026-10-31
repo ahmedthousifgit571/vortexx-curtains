@@ -271,6 +271,7 @@ async function ProductContent({ params }: Pick<PageProps<"/products/[slug]">, "p
                 <Link key={p.slug} href={`/products/${p.slug}`} className="group outline-none">
                   <WindowFrame
                     mechanic={p.mechanic}
+                    view={p.view}
                     className="group-focus-visible:ring-2 group-focus-visible:ring-teal-600"
                   />
                   <h3 className="mt-4 text-xl text-teal-900">{p.name}</h3>

@@ -2,12 +2,12 @@ import type { Metadata } from "next"
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react"
 import { QuoteForm } from "@/components/sections/contact/QuoteForm"
 import { PageHeader } from "@/components/sections/PageHeader"
-import { fullAddress, mapsEmbedUrl, mapsLink, site, whatsappLink } from "@/lib/site"
+import { site, whatsappLink, workshopCities } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Free Measure & Quote",
   description:
-    "Book a free home measurement for blinds, motorised shutters and pergolas in Bangalore. Call, WhatsApp or send a quote request to Lourtex in Horamavu, KR Puram.",
+    "Book a free home measurement for blinds, motorised shutters and pergolas in Bangalore and Kochi. Call, WhatsApp or send a quote request to Lourtex.",
 }
 
 /** Matches the visit described in the page intro. */
@@ -117,6 +117,11 @@ export default function ContactPage() {
                   </li>
                 </ul>
 
+                <p className="mt-5 flex items-center gap-2.5 text-sm text-white/65">
+                  <MapPin className="size-4 shrink-0 text-sunlight" aria-hidden />
+                  Workshops in {workshopCities}
+                </p>
+
                 <h3 className="mt-10 eyebrow text-white/55">What happens next</h3>
                 <ol className="mt-5 space-y-4">
                   {nextSteps.map((step, i) => (
@@ -130,46 +135,6 @@ export default function ContactPage() {
                 </ol>
               </div>
             </aside>
-          </div>
-
-          {/* Visit the workshop */}
-          <div className="mt-6 grid overflow-hidden rounded-[1.75rem] border border-ivory-300 bg-white sm:rounded-[2.5rem] lg:grid-cols-12">
-            <div className="flex flex-col justify-center p-6 sm:p-10 lg:col-span-5 lg:p-12">
-              <p className="eyebrow text-teal-600">Visit us</p>
-              <h2 className="mt-3 text-4xl text-teal-900 sm:text-5xl">
-                Our workshop in <em className="text-teal-600">Horamavu</em>.
-              </h2>
-              <address className="mt-5 flex gap-3 leading-relaxed text-ink/65 not-italic">
-                <MapPin className="mt-1 size-4 shrink-0 text-teal-600" aria-hidden />
-                {fullAddress}
-              </address>
-              <p className="mt-4 text-sm leading-relaxed text-ink/55">
-                We measure and fit across East Bangalore, including{" "}
-                {site.areasServed.slice(0, 5).join(", ")} and more.
-              </p>
-              <a
-                href={mapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-7 inline-flex h-12 items-center gap-2 self-start rounded-full border border-teal-700/25 px-6 text-sm font-semibold text-teal-800 transition-colors outline-none hover:border-teal-800 hover:bg-teal-800 hover:text-white focus-visible:ring-2 focus-visible:ring-teal-600"
-              >
-                Get directions
-                <ArrowUpRight
-                  className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  aria-hidden
-                />
-              </a>
-            </div>
-            <div className="relative min-h-72 bg-teal-100 sm:min-h-96 lg:col-span-7">
-              {/* Tinted toward the brand teal so the map doesn't shout over the page. */}
-              <iframe
-                title="Lourtex workshop on Google Maps"
-                src={mapsEmbedUrl}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 size-full border-0 [filter:grayscale(1)_sepia(0.35)_hue-rotate(150deg)_saturate(1.3)_contrast(1.05)]"
-              />
-            </div>
           </div>
         </div>
       </section>

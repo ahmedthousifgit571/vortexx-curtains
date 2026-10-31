@@ -45,6 +45,7 @@ export function ProductsTeaser() {
             >
               <WindowFrame
                 mechanic={product.mechanic}
+                view={product.view}
                 className="transition-shadow group-focus-visible:ring-2 group-focus-visible:ring-teal-600"
               />
               <h3 className="mt-5 text-xl font-semibold text-teal-900">{product.name}</h3>

@@ -13,14 +13,8 @@ export const site = {
   ],
   /** Primary WhatsApp line, Nainas (digits only, country code first). */
   whatsapp: "919446420264",
-  address: {
-    street: "No. 192, 3rd Cross, BPMP, K. Channasandra Village, Horamavu Post",
-    locality: "Krishnarajapuram Hobli, Bangalore East Taluk",
-    city: "Bangalore",
-    region: "Karnataka",
-    postalCode: "560113",
-    country: "India",
-  },
+  /** Cities only: the client keeps the street address off the site. */
+  workshops: ["Bangalore", "Kochi"],
   areasServed: [
     "KR Puram",
     "Horamavu",
@@ -35,16 +29,9 @@ export const site = {
   ],
 } as const
 
-export const fullAddress = [
-  site.address.street,
-  site.address.locality,
-  `${site.address.city}, ${site.address.region} ${site.address.postalCode}`,
-  site.address.country,
-].join(", ")
+/** "Bangalore and Kochi" */
+export const workshopCities = site.workshops.join(" and ")
 
 export function whatsappLink(message = "Hi Lourtex, I'd like a free measure & quote.") {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`
 }
-
-export const mapsEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(fullAddress)}&output=embed`
-export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`

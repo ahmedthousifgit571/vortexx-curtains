@@ -31,6 +31,14 @@ import zebraGraphite from "@/public/images/zebra blinds/zebragrey.jpg"
 import zebraMocha from "@/public/images/zebra blinds/zebrabrown.webp"
 import zebraOcean from "@/public/images/zebra blinds/blueZebra.jpeg"
 import zebraSand from "@/public/images/zebra blinds/zebrayellow.png"
+import viewGarden from "@/public/images/outdoor/outdoor1.png"
+import viewVillage from "@/public/images/outdoor/outdoor2.png"
+import viewCity from "@/public/images/outdoor/outdoor3.png"
+import viewCoast from "@/public/images/outdoor/outdoor4.png"
+import viewSky from "@/public/images/outdoor/outdoor5.png"
+import viewHills from "@/public/images/outdoor/outdoor6.png"
+import viewMonsoon from "@/public/images/outdoor/outdoor7.png"
+import viewLake from "@/public/images/outdoor/outdoor8.png"
 
 /**
  * Static product catalogue. Phase 3 replaces this with Sanity — keep the shape
@@ -61,6 +69,8 @@ export type Product = {
   category: ProductCategory
   /** The window-treatment motion used for its micro-animation and page mechanic. */
   mechanic: Mechanic
+  /** The outdoor scene behind its window card, revealed when the treatment opens. */
+  view: StaticImageData
   summary: string
   description: string
   bestFor: string[]
@@ -117,6 +127,7 @@ export const products: Product[] = [
     name: "Zebra Blinds",
     category: "blinds",
     mechanic: "zebra",
+    view: viewSky,
     summary: "Alternating sheer and solid bands for day-and-night control.",
     description:
       "Two layers of alternating sheer and solid stripes slide past each other. Line up the sheers for soft daylight, offset them for privacy. A modern favourite for Bangalore apartments, and one of the easiest blinds to motorise.",
@@ -181,6 +192,7 @@ export const products: Product[] = [
     name: "Roman Blinds",
     category: "blinds",
     mechanic: "fold",
+    view: viewVillage,
     summary: "Soft fabric that lifts into neat, even pleats.",
     description:
       "Roman blinds give you the softness of fabric with the tidy footprint of a blind. Each one is made with evenly spaced rods so it folds into crisp horizontal pleats as it rises.",
@@ -244,6 +256,7 @@ export const products: Product[] = [
     name: "Roller Blinds",
     category: "blinds",
     mechanic: "roll",
+    view: viewHills,
     summary: "A single flat panel that rolls up neatly out of sight.",
     description:
       "Roller blinds are the simplest way to control light: one flat fabric panel on a slim tube. Choose blackout for bedrooms or light-filtering for kitchens and studies.",
@@ -307,6 +320,7 @@ export const products: Product[] = [
     name: "Sunscreen Blinds",
     category: "blinds",
     mechanic: "roll",
+    view: viewCoast,
     summary: "Cuts glare and heat while keeping the view outside.",
     description:
       "Sunscreen fabric is woven with a fine, open mesh that blocks most of the sun's heat and glare but lets you see out. Ideal for west-facing rooms that bake in the Bangalore afternoon, and for screens where glare is a problem.",
@@ -370,6 +384,7 @@ export const products: Product[] = [
     name: "Skylight Blinds",
     category: "blinds",
     mechanic: "roll",
+    view: viewLake,
     summary: "Blinds that run in side channels for skylights and glass roofs.",
     description:
       "Skylight blinds are held taut in slim side channels so they sit flat at any angle: on a skylight, a sloping roof window or a glass roof over a duplex stairwell. Blackout or light-filtering, operated by a pole or a quiet motor.",
@@ -433,6 +448,7 @@ export const products: Product[] = [
     name: "Honeycomb Blinds",
     category: "blinds",
     mechanic: "pleat",
+    view: viewCity,
     summary: "Cellular pleats that trap air to keep rooms cooler.",
     description:
       "Honeycomb (cellular) blinds are made of pleated cells that trap a layer of air against the glass, cutting heat gain on hot days. They stack to a slim band when raised and can open top-down or bottom-up for privacy with daylight.",
@@ -496,6 +512,7 @@ export const products: Product[] = [
     name: "Motorised Shutters",
     category: "shutters",
     mechanic: "motor",
+    view: viewGarden,
     summary: "Aluminium roller shutters that rise and fall at the press of a button.",
     description:
       "Insulated aluminium slats roll down to seal a window, balcony or shopfront against heat, rain, dust and intruders, and roll away into a compact box when you want the opening clear. Operate them from a remote, a wall switch or your phone.",
@@ -564,6 +581,7 @@ export const products: Product[] = [
     name: "Pergolas",
     category: "pergolas",
     mechanic: "tilt",
+    view: viewMonsoon,
     summary: "Louvred roofs you tilt for sun, shade or monsoon cover.",
     description:
       "Our aluminium pergolas have motorised louvres that rotate to let sun in, angle for shade, or close tight against the rain, with integrated gutters to carry water away. Retractable fabric roofs are available for lighter structures.",

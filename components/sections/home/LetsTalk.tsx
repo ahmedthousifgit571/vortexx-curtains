@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react"
 import { Reveal } from "@/components/sections/Reveal"
-import { site, whatsappLink } from "@/lib/site"
+import { site, whatsappLink, workshopCities } from "@/lib/site"
 import { ShowcaseVideo } from "./ShowcaseVideo"
 
 const [primary] = site.contacts
@@ -78,7 +78,7 @@ export function LetsTalk() {
                 >
                   {primary.phone}
                 </a>{" "}
-                · Horamavu, Bangalore
+                · {workshopCities}
               </p>
             </Reveal>
 

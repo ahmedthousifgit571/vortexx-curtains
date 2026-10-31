@@ -65,6 +65,8 @@ products.
 - Email: curttex2026@gmail.com
 - Address: No. 192, 3rd Cross, BPMP, K. Channasandra Village, Horamavu Post,
   Krishnarajapuram Hobli, Bangalore East Taluk, Bangalore, Karnataka 560113, India
+  → OVERRIDDEN by client (2026-10-31): no street address or map anywhere on the site. Show only
+    "Workshops in Bangalore and Kochi" (`site.workshops` / `workshopCities` in lib/site.ts).
 - GSTIN: 29CTUPM7128L1ZO (footer only, small)
 
 ## Tech stack (use current stable versions, check docs rather than guessing APIs)

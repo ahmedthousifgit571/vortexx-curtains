@@ -1,15 +1,14 @@
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
 import { footerNav } from "@/lib/nav"
 import { products } from "@/lib/products"
-import { fullAddress, mapsLink, site, whatsappLink } from "@/lib/site"
+import { site, whatsappLink, workshopCities } from "@/lib/site"
 import { FooterWordmark } from "./FooterWordmark"
 import { Logo } from "./Wordmark"
 
 const linkClass = "text-white/60 transition-colors hover:text-white"
 
 /**
- * A dark rounded panel inset from the page edges: brand and address, link
+ * A dark rounded panel inset from the page edges: brand and workshop cities, link
  * columns, then a giant slatted LOURTEX. Below xl the bottom padding clears
  * the floating WhatsApp button.
  */
@@ -33,21 +32,7 @@ export function Footer() {
                 Made-to-measure blinds, motorised shutters and pergolas for homes and businesses.
                 Measured, made and installed by our own team.
               </p>
-              <address className="mt-6 max-w-xs text-sm leading-relaxed text-white/50 not-italic">
-                {fullAddress}
-              </address>
-              <a
-                href={mapsLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-white/75 transition-colors hover:text-white"
-              >
-                Get directions
-                <ArrowUpRight
-                  aria-hidden
-                  className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
+              <p className="mt-6 text-sm text-white/50">Workshops in {workshopCities}</p>
 
               <div className="mt-10 max-w-sm border-t border-white/10 pt-6">
                 <h2 className="eyebrow text-white/45">Associate partners</h2>
@@ -139,7 +124,9 @@ export function Footer() {
           </div>
 
           <div className="mt-6 flex flex-col gap-2 border-t border-white/10 py-7 text-sm text-white/50 sm:flex-row sm:justify-between">
-            <p>© {site.copyrightYear} Lourtex · Horamavu, Bangalore</p>
+            <p>
+              © {site.copyrightYear} Lourtex · {workshopCities}
+            </p>
             <p>GSTIN {site.gstin}</p>
           </div>
         </div>

@@ -41,13 +41,13 @@ export const media = {
    */
   "contact-breeze": { dir: "contact-breeze", kind: "video", loop: true, ready: true },
   /**
-   * The view through the hero window: sunlit tree canopy and blue sky, leaves moving in the
-   * breeze (3:4, 8 s seamless loop, warmed slightly, denoised and softened a touch the way a
-   * view through glass reads). Desktop 540×720 WebM (~380 KB) + MP4, phones 360×480 MP4
-   * (`-mobile`). No poster: the illustrated sky stands in until it plays.
-   * Mixkit "Tree branches in the breeze" (Mixkit Stock Video Free License, commercial use):
-   * https://mixkit.co/free-stock-video/tree-branches-in-the-breeze-1188/
-   * Source kept in .media-original/hero-window-view/ (git-ignored).
+   * The view through the hero window: looking up through a sunlit leafy branch at blue sky
+   * and drifting clouds as the camera pans (3:4 crop from the right of the frame, ~9 s loop
+   * whose last second crossfades into the first, warmed slightly, denoised and softened the
+   * way a view through glass reads). Desktop 540×720 WebM (~510 KB) + MP4, phones 360×480
+   * MP4 (`-mobile`). No poster: the illustrated sky stands in until it plays.
+   * Source: leavevideo.mp4 (supplied 2026-10-31), kept in .media-original/hero-window-view/
+   * (git-ignored).
    */
   "hero-window-view": { dir: "hero-window-view", kind: "video", loop: true, ready: true },
 } satisfies Record<string, MediaSlot>

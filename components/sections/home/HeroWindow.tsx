@@ -142,7 +142,7 @@ export function HeroWindow() {
       {/* Tilting body: frame + sill + floor light move as one */}
       <div className="relative [transform:rotateX(var(--rx,0deg))_rotateY(var(--ry,0deg))] transition-transform duration-700 ease-[var(--ease-out-soft)] [transform-style:preserve-3d]">
         <div className="relative aspect-[3/4] overflow-hidden rounded-t-[999px] rounded-b-lg bg-teal-900 p-3 shadow-[0_40px_80px_-30px_rgb(11_40_51/0.55)]">
-          {/* Sky, sun and glazing bars */}
+          {/* Sky and sun */}
           <div className="absolute inset-3 overflow-hidden rounded-t-[999px] rounded-b-md bg-gradient-to-b from-sunlight-soft via-ivory to-teal-100">
             <div className="absolute inset-0 [transform:translate(var(--sx,0px),var(--sy,0px))] transition-transform duration-700 ease-[var(--ease-out-soft)]">
               {/* The real view outside; bleeds past the glass so the parallax never shows an edge */}
@@ -182,8 +182,6 @@ export function HeroWindow() {
                   "linear-gradient(118deg, transparent 32%, rgb(255 255 255 / 0.16) 44%, rgb(255 255 255 / 0.04) 52%, transparent 60%)",
               }}
             />
-            <div className="absolute inset-y-0 left-1/2 w-1.5 -translate-x-1/2 bg-teal-900/85 group-data-live:shadow-[0_0_8px_rgb(11_40_51/0.45)]" />
-            <div className="absolute inset-x-0 top-[52%] h-1.5 bg-teal-900/85 group-data-live:shadow-[0_0_8px_rgb(11_40_51/0.45)]" />
           </div>
 
           <div className="absolute inset-3 overflow-hidden rounded-t-[999px] rounded-b-md">

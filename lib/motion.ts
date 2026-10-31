@@ -57,6 +57,18 @@ export const heroWindow = {
   viewIdleTimeout: 2000,
 } as const
 
+/** Product window cards: touch screens can't hover, so each blind opens and closes on its own while in view. */
+export const windowCard = {
+  /** Band of the viewport (rootMargin) a card must sit in to run. */
+  inView: "-15% 0px",
+  /** Wait (ms) after a card comes into view; the right-hand column adds up to `columnStagger`. */
+  firstDelay: 600,
+  columnStagger: 700,
+  /** Each hold includes the blind's own travel (1.1s, the motorised shutter 1.8s). */
+  openHold: 3800,
+  closedHold: 2400,
+} as const
+
 /** "How it works" demo on product pages: idle back-and-forth until the visitor takes over. */
 export const productDemo = {
   /** Zebra: height (px) of one solid + one sheer band pair is twice this. */
