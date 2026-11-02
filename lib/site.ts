@@ -3,7 +3,7 @@ export const site = {
   name: "Lourtex",
   tagline: "Blinds, motorised shutters & pergolas, made to measure in Bangalore",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  email: "curttex2026@gmail.com",
+  email: "lourtexprivateltd@gmail.com",
   gstin: "29CTUPM7128L1ZO",
   /** Static so pages stay prerenderable (no request-time Date). */
   copyrightYear: 2026,

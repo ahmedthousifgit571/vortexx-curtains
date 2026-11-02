@@ -40,7 +40,8 @@ products.
 ## Brand
 - Name: CURTTEX
   → OVERRIDDEN by client (2026-10-15): brand is **Lourtex** (write "Lourtex" in copy; the
-    wordmark renders it uppercase). Email stays curttex2026@gmail.com.
+    wordmark renders it uppercase).
+  → OVERRIDDEN by client (2026-11-02): email is **lourtexprivateltd@gmail.com** (`site.email`).
 - Primary: Deep Teal #154A5E. Secondary: White #FFFFFF.
 - Supporting palette (derive tokens): teal-950 #0B2833, teal-800 #123F50,
   teal-600 #1F6A85, ivory #F7F4EE (warm surface), sunlight #F2C879 (light/glow accent
@@ -65,6 +66,7 @@ products.
   → OVERRIDDEN by client (2026-10-17): contacts are **Nainas +91 94464 20264** and
     **Sabir +91 94462 06391** (lib/site.ts). WhatsApp goes to Nainas.
 - Email: curttex2026@gmail.com
+  → OVERRIDDEN by client (2026-11-02): **lourtexprivateltd@gmail.com** (lib/site.ts).
 - Address: No. 192, 3rd Cross, BPMP, K. Channasandra Village, Horamavu Post,
   Krishnarajapuram Hobli, Bangalore East Taluk, Bangalore, Karnataka 560113, India
   → OVERRIDDEN by client (2026-10-31): no street address or map anywhere on the site. Show only
